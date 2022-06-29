@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="KTU_Social.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:KTU_Social"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    DataContext="{StaticResource MainPageViewModel}"
+    xmlns:view="using:KTU_Social.View"
+    Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Background="{ThemeResource PanelBrush}">
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <Image Source="{ThemeResource Logo}" Margin="8"/>
+                <TextBlock x:Name="Title" d:Text="Karadeniz Technical University" HorizontalAlignment="Center" Text="{x:Bind VM.Title, Mode=OneWay}" Style="{ThemeResource TextBlock}" VerticalAlignment="Center"/>
+            </StackPanel>
+            
+        </Grid>
+        <Grid x:Name="View" BorderBrush="{ThemeResource BorderBrush}" BorderThickness="0,1,0,0" Grid.Row="1">
+            <view:LoginView x:Name="LoginView"/>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Source>C:\Users\alperokur\Desktop\Icon.png</Source>
+    <SmallTileSource>C:\Users\alperokur\Desktop\Icon.png</SmallTileSource>
+    <MediumTileSource>C:\Users\alperokur\Desktop\Icon.png</MediumTileSource>
+    <WideTileSource>C:\Users\alperokur\Desktop\Icon.png</WideTileSource>
+    <LargeTileSource>C:\Users\alperokur\Desktop\Icon.png</LargeTileSource>
+    <AppIconSource>C:\Users\alperokur\Desktop\Icon.png</AppIconSource>
+    <SplashScreenSource>C:\Users\alperokur\Desktop\Icon.png</SplashScreenSource>
+    <PackageLogoSource>C:\Users\alperokur\Desktop\Icon.png</PackageLogoSource>
+    <BadgeLogoSource>C:\Users\alperokur\Desktop\Icon.png</BadgeLogoSource>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,88 @@
+﻿<Grid
+    x:Class="KTU_Social.View.HomeView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:KTU_Social.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Loading="Grid_Loading"
+    DataContext="{StaticResource HomeViewModel}">
+
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition MinWidth="256" Width="Auto"/>
+        <ColumnDefinition/>
+        <ColumnDefinition MinWidth="256" Width="Auto"/>
+    </Grid.ColumnDefinitions>
+    <Grid x:Name="LeftPanel" Background="{ThemeResource PanelBrush}" BorderBrush="{ThemeResource BorderBrush}" BorderThickness="0,0,1,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="ProfileSection">
+            <Grid Margin="32" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Border CornerRadius="50" Height="100" Width="100">
+                    <Image x:Name="ProfilePicture" d:Source="/Themes/Icons/Avatar.jpg"/>
+                </Border>
+                <StackPanel Grid.Column="1" Margin="16,0,0,0" VerticalAlignment="Center">
+                    <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                        <Image x:Name="VerifiedIcon" d:Visibility="Visible" Height="16" Margin="-2,2,4,0" Source="{StaticResource Verified}" VerticalAlignment="Center" Visibility="Collapsed" Width="16"/>
+                        <TextBlock x:Name="RealName" d:Text="Alper Okur" Foreground="Orange" Text="{x:Bind VM.Model.RealName, Mode=OneWay}" Style="{ThemeResource ProfileText}" TextWrapping="Wrap"/>
+                    </StackPanel>
+                    <TextBlock x:Name="Email" d:Text="330173@cs.ktu.edu.tr" Text="{x:Bind VM.Model.Email, Mode=OneWay}" Style="{ThemeResource ProfileText}" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="Department" d:Text="Computer Science" Foreground="#99FFFFFF" Text="{x:Bind VM.Model.Department, Mode=OneWay}" Style="{ThemeResource ProfileText}" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="Info" d:Text="4th Grade Student" Foreground="#99FFFFFF" Text="{x:Bind VM.Model.Info, Mode=OneWay}" Style="{ThemeResource ProfileText}"/>
+                </StackPanel>
+            </Grid>
+            <Grid Background="{ThemeResource PrimaryAccentBrush}" Style="{ThemeResource Reagent}"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1">
+            <StackPanel Margin="0,0,0,16">
+                <StackPanel x:Name="FirstGradeSection" d:Visibility="Visible" Visibility="Collapsed">
+                    <Button x:Name="FirstGradeButton" Click="FirstGradeButton_Click" d:Content="1th Grade" Content="{x:Bind VM.Model.FirstGrade, Mode=OneWay}" Style="{ThemeResource Category}"/>
+                    <StackPanel x:Name="FirstGrade" Style="{StaticResource CommonStackPanel}"/>
+                    <Grid Background="{ThemeResource PrimaryAccentBrush}" Style="{ThemeResource Reagent}"/>
+                </StackPanel>
+                <StackPanel x:Name="SecondGradeSection" d:Visibility="Visible" Visibility="Collapsed">
+                    <Button x:Name="SecondGradeButton" Click="SecondGradeButton_Click" d:Content="2th Grade" Content="{x:Bind VM.Model.SecondGrade, Mode=OneWay}" Style="{ThemeResource Category}"/>
+                    <StackPanel x:Name="SecondGrade" Style="{StaticResource CommonStackPanel}"/>
+                    <Grid Background="{ThemeResource PrimaryAccentBrush}" Style="{ThemeResource Reagent}"/>
+                </StackPanel>
+                <StackPanel x:Name="ThirdGradeSection" d:Visibility="Visible" Visibility="Collapsed">
+                    <Button x:Name="ThirdGradeButton" Click="ThirdGradeButton_Click" d:Content="3th Grade" Content="{x:Bind VM.Model.ThirdGrade, Mode=OneWay}" Style="{ThemeResource Category}"/>
+                    <StackPanel x:Name="ThirdGrade" Style="{StaticResource CommonStackPanel}"/>
+                    <Grid Background="{ThemeResource PrimaryAccentBrush}" Style="{ThemeResource Reagent}"/>
+                </StackPanel>
+                <StackPanel x:Name="FourGradeSection" d:Visibility="Visible" Visibility="Collapsed">
+                    <Button x:Name="FourGradeButton" Click="FourGradeButton_Click" d:Content="4th Grade" Content="{x:Bind VM.Model.FourGrade, Mode=OneWay}" Style="{ThemeResource Category}"/>
+                    <StackPanel x:Name="FourGrade" Style="{StaticResource CommonStackPanel}"/>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+    <Grid x:Name="MiddlePanel" Background="{ThemeResource BackgroundBrush}" Grid.Column="1"/>
+    <Grid x:Name="RightPanel" Background="{ThemeResource PanelBrush}" BorderBrush="{ThemeResource BorderBrush}" BorderThickness="1,0,0,0" Grid.Column="2">
+        <ScrollViewer>
+            <StackPanel Margin="0,16">
+                <StackPanel x:Name="FriendsSection">
+                    <Button x:Name="FriendsButton" Content="{x:Bind VM.Model.Friends, Mode=OneWay}" Style="{ThemeResource Category}" Click="FriendsButton_Click"/>
+                    <StackPanel x:Name="Friends" Style="{StaticResource CommonStackPanel}"/>
+                    <Grid Background="{ThemeResource PrimaryAccentBrush}" Style="{ThemeResource Reagent}"/>
+                </StackPanel>
+                <StackPanel x:Name="AcademicStaffSection">
+                    <Button x:Name="DepartmentAcademicStaffButton" Content="{x:Bind VM.Model.Department_Academic_Staff, Mode=OneWay}" Style="{ThemeResource Category}" Click="DepartmentAcademicStaffButton_Click"/>
+                    <StackPanel x:Name="DepartmentAcademicStaff" Style="{StaticResource CommonStackPanel}"/>
+                    <Grid Background="{ThemeResource PrimaryAccentBrush}" Style="{ThemeResource Reagent}"/>
+                </StackPanel>
+                <StackPanel x:Name="DepartmentSection">
+                    <Button x:Name="DepartmentButton" Content="{x:Bind VM.Model.Department, Mode=OneWay}" Style="{ThemeResource Category}" Click="DepartmentButton_Click"/>
+                    <StackPanel x:Name="PersonInDepartment" Style="{StaticResource CommonStackPanel}"/>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Grid>
