@@ -1,0 +1,23 @@
+﻿<Application
+    x:Class="KTU_Social.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="using:KTU_Social.ViewModel">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Themes/Brushes.xaml"/>
+                <ResourceDictionary Source="/Themes/Components.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <vm:HomeViewModel x:Key="HomeViewModel"/>
+            <vm:ControlPanelViewModel x:Key="ControlPanelViewModel"/>
+            <vm:ChannelViewModel x:Key="ChannelViewModel"/>
+            <vm:LoginViewModel x:Key="LoginViewModel"/>
+            <vm:MainPageViewModel x:Key="MainPageViewModel"/>
+            
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>
+

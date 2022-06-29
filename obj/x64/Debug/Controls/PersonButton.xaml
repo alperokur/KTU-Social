@@ -1,0 +1,22 @@
+﻿<Button x:ConnectionId='1'
+    x:Class="KTU_Social.Controls.PersonButton"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Padding="0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left"
+    d:Width="223" d:Height="52">
+
+    <StackPanel Orientation="Horizontal" Margin="8">
+        <Border CornerRadius="50" Height="32" Width="32">
+            <Image x:ConnectionId='4' x:Name="ProfilePicture" d:Source="/Themes/Icons/Avatar.jpg"                       />
+        </Border>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock x:ConnectionId='2' x:Name="FirstAndLastname"                            d:Text="Alper Okur" FontSize="12" Padding="8,4" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            <Image x:ConnectionId='3' x:Name="VerifiedIcon" Height="16" Margin="-2,2,4,0" Source="{ThemeResource Verified}" VerticalAlignment="Center" d:Visibility="Visible"                                Width="16"/>
+        </StackPanel>
+
+    </StackPanel>
+</Button>
+
